@@ -1,0 +1,12 @@
+{
+  "name": "seleniumnode",
+  "version": "1.0.0",
+  "description": "A test project for selenium",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha searchtxce21de39c966cbcd57156211d0d1ebd209f3450de4db1fd6d019f8abb26fea38.spec.js"
+  },
+  "dependencies": {
+    "mocha": "^6.1.4",
+    "selenium-webdriver": "4.0.0-alpha.1"
+  }
+}
