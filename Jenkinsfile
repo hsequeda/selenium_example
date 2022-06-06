@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
-                sh 'npm install chromedriver'
+                sh 'npm install -g chromedriver'
             }
         }
 
