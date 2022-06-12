@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:14.19-alpine'
+            image 'node:14.19'
             reuseNode false
         }
     }
@@ -12,7 +12,7 @@ pipeline {
 
 
     stages {
-        stage('Git') {
+        stage('Clean') {
             steps {
                 step([$class: 'WsCleanup'])
                 checkout scm
@@ -21,12 +21,12 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'apk add unzip dpkg openjdk8 chromium'
+                sh 'apt install unzip dpkg openjdk8'
                 sh 'npm install'
                 sh 'wget https://chromedriver.storage.googleapis.com/102.0.5005.61/chromedriver_linux64.zip && \
                 unzip ./chromedriver_linux64.zip && \
                 chmod +x ./chromedriver'
-                // sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && dpkg -i google-chrome-stable_current_amd64.deb'
+                sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && dpkg -i google-chrome-stable_current_amd64.deb'
             }
         }
 
