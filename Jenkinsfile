@@ -14,6 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'npm install'
+                sh 'pkg install unzip'
                 sh 'wget https://chromedriver.storage.googleapis.com/102.0.5005.61/chromedriver_linux64.zip && \
                 unzip ./chromedriver_linux64.zip && \
                 chmod +x ./chromedriver'
