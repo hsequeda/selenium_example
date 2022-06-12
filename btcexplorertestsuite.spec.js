@@ -23,7 +23,7 @@ describe('btc_explorer_test_suite', function() {
     // Test name: search_tx_ce21de39c966cbcd57156211d0d1ebd209f3450de4db1fd6d019f8abb26fea38
     // Step # | name | target | value
     // 1 | open | https://www.blockchain.com/explorer?view=btc |
-    await driver.get("https://www.blockchain.com/explorer?view=btc")
+    await driver.get('https://www.google.com');
     // 2 | setWindowSize | 956x968 |
     // await driver.manage().window().setRect({ width: 956, height: 968 })
     // // 3 | click | css=.s0dncj-4 > .sc-1c3roxu-1 |
