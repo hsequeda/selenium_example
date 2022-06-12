@@ -10,14 +10,15 @@ pipeline {
         CI = "true"
     }
 
-    stage('Git') {
-        steps {
-            step([$class: 'WsCleanup'])
-            checkout scm
-        }
-    }
 
     stages {
+        stage('Git') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'apk add unzip'
