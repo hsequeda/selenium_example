@@ -33,7 +33,8 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'ls'
+                sh 'ls -ahl'
+                sh 'echo $USER'
                 sh 'npm run test'
             }
         }
