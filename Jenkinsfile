@@ -29,5 +29,12 @@ pipeline {
                 sh 'npm run test'
             }
         }
+
+        stage('Git') {
+            steps {
+                step([$class: 'WsCleanup'])
+                checkout scm
+            }
+        }
     }
 }
