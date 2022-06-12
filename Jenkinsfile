@@ -10,6 +10,13 @@ pipeline {
         CI = "true"
     }
 
+    stage('Git') {
+        steps {
+            step([$class: 'WsCleanup'])
+            checkout scm
+        }
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -27,13 +34,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm run test'
-            }
-        }
-
-        stage('Git') {
-            steps {
-                step([$class: 'WsCleanup'])
-                checkout scm
             }
         }
     }
