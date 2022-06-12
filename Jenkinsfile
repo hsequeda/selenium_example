@@ -33,8 +33,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'ls -ahl'
-                sh 'echo $USER'
+                sh 'ls -ahl /var/jenkins_home/workspace/selenium_example/chromedriver'
                 sh 'npm run test'
             }
         }
